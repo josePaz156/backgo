@@ -1,0 +1,858 @@
+╔════════════════════════════════════════════════════════╗
+║      PRUEBAS AUTOMATIZADAS - MKFS Y FDISK             ║
+║      Fecha: 2025-10-18 18:11:38                     ║
+╚════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════
+  FASE 1: CREACIÓN DE DISCO
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear disco de 30 MB
+Comando: mkdisk -size=30 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkdisk -size=30 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Ejecutando: mkdisk con parámetros: -size=30 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+======Inicio MKDISK======
+======Parámetros Recibidos======
+Size: 30
+Fit: ff (default: ff)
+Unit: m (default: m)
+Path: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Advertencia: El archivo /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia ya existe, será sobrescrito
+Archivo creado exitosamente en: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+===Data recuperada===
+Tamaño del MBR: 31457280
+Fit: ff
+Fecha de creación: 2025-08-04
+Firma: 10
+Drive D registrado con ruta: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+======Fin MKDISK======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 2: CREAR PARTICIONES
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear Part1 (6 MB)
+Comando: fdisk -size=6 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1 -type=p
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -size=6 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1 -type=p
+Ejecutando: fdisk con parámetros: -size=6 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1 -type=p
+======INICIO FDISK======
+Tamaño:  6
+Path:  /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre:  Part1
+Tipo:  p (default: p)
+Fit:  wf (default: wf)
+Unit:  m (default: k)
+Partición p creada exitosamente
+======FIN FDISK======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear Part2 (8 MB)
+Comando: fdisk -size=8 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2 -type=p
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -size=8 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2 -type=p
+Ejecutando: fdisk con parámetros: -size=8 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2 -type=p
+======INICIO FDISK======
+Tamaño:  8
+Path:  /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre:  Part2
+Tipo:  p (default: p)
+Fit:  wf (default: wf)
+Unit:  m (default: k)
+Partición p creada exitosamente
+======FIN FDISK======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear Extended (10 MB)
+Comando: fdisk -size=10 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Extended1 -type=e
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -size=10 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Extended1 -type=e
+Ejecutando: fdisk con parámetros: -size=10 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Extended1 -type=e
+======INICIO FDISK======
+Tamaño:  10
+Path:  /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre:  Extended1
+Tipo:  e (default: p)
+Fit:  wf (default: wf)
+Unit:  m (default: k)
+Partición e creada exitosamente
+======FIN FDISK======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear Logica1 (3 MB)
+Comando: fdisk -size=3 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1 -type=l
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -size=3 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1 -type=l
+Ejecutando: fdisk con parámetros: -size=3 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1 -type=l
+======INICIO FDISK======
+Tamaño:  3
+Path:  /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre:  Logica1
+Tipo:  l (default: p)
+Fit:  wf (default: wf)
+Unit:  m (default: k)
+Partición lógica creada exitosamente
+======FIN FDISK======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear Logica2 (3 MB)
+Comando: fdisk -size=3 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica2 -type=l
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -size=3 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica2 -type=l
+Ejecutando: fdisk con parámetros: -size=3 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica2 -type=l
+======INICIO FDISK======
+Tamaño:  3
+Path:  /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre:  Logica2
+Tipo:  l (default: p)
+Fit:  wf (default: wf)
+Unit:  m (default: k)
+Partición lógica creada exitosamente
+======FIN FDISK======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 3: PRUEBAS DE FDISK ADD (Agregar Espacio)
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Agregar 2 MB a Part1
+Comando: fdisk -add=2 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -add=2 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1
+Ejecutando: fdisk con parámetros: -add=2 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1
+======INICIO FDISK ADD======
+Path: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre: Part1
+Add: 2
+Unit: m
+✓ Partición 'Part1' modificada exitosamente
+  Tamaño anterior: 6291456 bytes (6.00 MB)
+  Tamaño nuevo: 8388608 bytes (8.00 MB)
+  Cambio: +2097152 bytes (+2.00 MB)
+======FIN FDISK ADD======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Agregar 1024 KB a Logica1
+Comando: fdisk -add=1024 -unit=k -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -add=1024 -unit=k -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1
+Ejecutando: fdisk con parámetros: -add=1024 -unit=k -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1
+======INICIO FDISK ADD======
+Path: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre: Logica1
+Add: 1024
+Unit: k
+Error: No hay espacio suficiente después de la partición lógica
+Espacio disponible: 0 bytes
+Error: Partición 'Logica1' no encontrada
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 4: PRUEBAS DE FDISK ADD (Quitar Espacio)
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Quitar 1 MB de Part2
+Comando: fdisk -add=-1 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -add=-1 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2
+Ejecutando: fdisk con parámetros: -add=-1 -unit=m -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2
+======INICIO FDISK ADD======
+Path: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre: Part2
+Add: -1
+Unit: m
+✓ Partición 'Part2' modificada exitosamente
+  Tamaño anterior: 8388608 bytes (8.00 MB)
+  Tamaño nuevo: 7340032 bytes (7.00 MB)
+  Cambio: -1048576 bytes (-1.00 MB)
+======FIN FDISK ADD======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Quitar 512 KB de Logica2
+Comando: fdisk -add=-512 -unit=k -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: fdisk -add=-512 -unit=k -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica2
+Ejecutando: fdisk con parámetros: -add=-512 -unit=k -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica2
+======INICIO FDISK ADD======
+Path: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre: Logica2
+Add: -512
+Unit: k
+Partición lógica modificada exitosamente
+======FIN FDISK ADD======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 5: MONTAR PARTICIONES
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Montar Part1
+Comando: mount -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mount -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1
+Ejecutando: mount con parámetros: -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part1
+======Inicio MOUNT======
+Path del disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre de partición: Part1
+✓ Partición 'Part1' montada exitosamente con ID: 851A
+  - Tipo: Primaria
+  - Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+  - Status: Activa
+  - Correlativo: 1
+
+--- Información del ID generado ---
+  - Carnet: 202201185 → Últimos 2 dígitos: 85
+  - Número de partición en disco: 1
+  - Letra de disco: A
+  - ID final: 851A
+
+=== PARTICIONES MONTADAS ===
+ID: 851A | Partición: Part1 | Tipo: Primaria | Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+============================
+
+======FIN MOUNT======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Montar Part2
+Comando: mount -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mount -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2
+Ejecutando: mount con parámetros: -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Part2
+======Inicio MOUNT======
+Path del disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre de partición: Part2
+✓ Partición 'Part2' montada exitosamente con ID: 852A
+  - Tipo: Primaria
+  - Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+  - Status: Activa
+  - Correlativo: 1
+
+--- Información del ID generado ---
+  - Carnet: 202201185 → Últimos 2 dígitos: 85
+  - Número de partición en disco: 2
+  - Letra de disco: A
+  - ID final: 852A
+
+=== PARTICIONES MONTADAS ===
+ID: 851A | Partición: Part1 | Tipo: Primaria | Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+ID: 852A | Partición: Part2 | Tipo: Primaria | Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+============================
+
+======FIN MOUNT======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Montar Logica1
+Comando: mount -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mount -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1
+Ejecutando: mount con parámetros: -path=/home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia -name=Logica1
+======Inicio MOUNT======
+Path del disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Nombre de partición: Logica1
+✓ Partición 'Logica1' montada exitosamente con ID: 853A
+  - Tipo: Lógica
+  - Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+  - Status: Activa
+  - Correlativo: 1
+
+--- Información del ID generado ---
+  - Carnet: 202201185 → Últimos 2 dígitos: 85
+  - Número de partición en disco: 3
+  - Letra de disco: A
+  - ID final: 853A
+
+=== PARTICIONES MONTADAS ===
+ID: 851A | Partición: Part1 | Tipo: Primaria | Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+ID: 852A | Partición: Part2 | Tipo: Primaria | Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+ID: 853A | Partición: Logica1 | Tipo: Lógica | Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+============================
+
+======FIN MOUNT======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Ver particiones montadas
+Comando: mounted
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mounted
+Ejecutando: mounted con parámetros: 
+======INICIO MOUNTED======
+Comando: mounted
+Descripción: Mostrar todas las particiones montadas en el sistema
+
+╔═══════════════════════════════════════════════════════════════╗
+║                    PARTICIONES MONTADAS EN EL SISTEMA                    ║
+╠═══════════════════════════════════════════════════════════════╣
+║ Total de particiones montadas: 3                              ║
+║ Carnet del sistema: 202201185 (IDs inician con 85)           ║
+╠═══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║ DISCO 1: /home/jose/Documentos/proyecto2/Backend/test/dis... ║
+║ ├─ Número de particiones montadas: 3                         ║
+║ ├─ [851A] Part1           - Primaria - Activa ║
+║ ├─ [852A] Part2           - Primaria - Activa ║
+║ └─ [853A] Logica1         - Lógica   - Activa ║
+║                                                              ║
+╠═══════════════════════════════════════════════════════════════╣
+║                        INFORMACIÓN TÉCNICA                           ║
+╠═══════════════════════════════════════════════════════════════╣
+║ • Letras de disco en uso: A                                   ║
+║ • Montaje en memoria RAM: Sí                                 ║
+║ • Estado en disco actualizado: Sí                           ║
+║ • IDs únicos generados: 3                                   ║
+======FIN MOUNTED======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 6: FORMATEAR CON EXT2
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Formatear Part1 con EXT2 (por defecto)
+Comando: mkfs -id=851A -type=full
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkfs -id=851A -type=full
+Ejecutando: mkfs con parámetros: -id=851A -type=full
+======Inicio MKFS======
+Creando sistema de archivos EXT2 en partición ID: 851A
+Tipo de formateo: full
+Partición encontrada: Part1 en disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Datos de la partición - Inicio: 164, Tamaño: 8388608 bytes
+Calculando estructuras para EXT2...
+Número de inodos calculado: 25970
+Número de bloques calculado: 77910
+=== ESTRUCTURA DEL SISTEMA DE ARCHIVOS EXT2 ===
+Superblock:        posición 164 (tamaño: 94 bytes)
+Bitmap inodos:     posición 258 (tamaño: 25970 bytes)
+Bitmap bloques:    posición 26228 (tamaño: 77910 bytes)
+Tabla de inodos:   posición 104138 (tamaño: 3298190 bytes)
+Bloques de datos:  posición 3402328 (tamaño: 4986240 bytes)
+Realizando formateo completo...
+Formateo completo terminado.
+Inicializando bitmaps...
+Inicializando tabla de inodos...
+Inicializando bloques de datos...
+Creando estructura inicial del sistema de archivos...
+Escribiendo estructuras al disco...
+=== SISTEMA DE ARCHIVOS EXT2 CREADO EXITOSAMENTE ===
+Partición ID: 851A
+Sistema: EXT2
+Inodos totales: 25970
+Inodos disponibles: 25968
+Bloques totales: 77910
+Bloques disponibles: 77908
+
+Estructura inicial:
+  / (directorio raíz)
+  ├── . (enlace al directorio actual)
+  ├── .. (enlace al directorio padre)
+  └── users.txt (archivo de usuarios y grupos)
+
+Archivo users.txt contiene:
+  1,G,root        <- Grupo root (ID=1)
+  1,U,root,root,123 <- Usuario root (ID=1, Grupo=root, Contraseña=123)
+
+El usuario root tiene permisos completos para modificar el sistema.
+======FIN MKFS======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Formatear Logica1 con EXT2 (explícito)
+Comando: mkfs -id=853A -type=full -fs=2fs
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkfs -id=853A -type=full -fs=2fs
+Ejecutando: mkfs con parámetros: -id=853A -type=full -fs=2fs
+======Inicio MKFS======
+Creando sistema de archivos EXT2 en partición ID: 853A
+Tipo de formateo: full
+Partición encontrada: Logica1 en disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Datos de la partición - Inicio: 14680258, Tamaño: 3145728 bytes
+Calculando estructuras para EXT2...
+Número de inodos calculado: 9738
+Número de bloques calculado: 29214
+=== ESTRUCTURA DEL SISTEMA DE ARCHIVOS EXT2 ===
+Superblock:        posición 14680258 (tamaño: 94 bytes)
+Bitmap inodos:     posición 14680352 (tamaño: 9738 bytes)
+Bitmap bloques:    posición 14690090 (tamaño: 29214 bytes)
+Tabla de inodos:   posición 14719304 (tamaño: 1236726 bytes)
+Bloques de datos:  posición 15956030 (tamaño: 1869696 bytes)
+Realizando formateo completo...
+Formateo completo terminado.
+Inicializando bitmaps...
+Inicializando tabla de inodos...
+Inicializando bloques de datos...
+Creando estructura inicial del sistema de archivos...
+Escribiendo estructuras al disco...
+=== SISTEMA DE ARCHIVOS EXT2 CREADO EXITOSAMENTE ===
+Partición ID: 853A
+Sistema: EXT2
+Inodos totales: 9738
+Inodos disponibles: 9736
+Bloques totales: 29214
+Bloques disponibles: 29212
+
+Estructura inicial:
+  / (directorio raíz)
+  ├── . (enlace al directorio actual)
+  ├── .. (enlace al directorio padre)
+  └── users.txt (archivo de usuarios y grupos)
+
+Archivo users.txt contiene:
+  1,G,root        <- Grupo root (ID=1)
+  1,U,root,root,123 <- Usuario root (ID=1, Grupo=root, Contraseña=123)
+
+El usuario root tiene permisos completos para modificar el sistema.
+======FIN MKFS======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 7: FORMATEAR CON EXT3
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Formatear Part2 con EXT3 (con journaling)
+Comando: mkfs -id=852A -type=full -fs=3fs
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkfs -id=852A -type=full -fs=3fs
+Ejecutando: mkfs con parámetros: -id=852A -type=full -fs=3fs
+======Inicio MKFS======
+Creando sistema de archivos EXT3 en partición ID: 852A
+Tipo de formateo: full
+Partición encontrada: Part2 en disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Datos de la partición - Inicio: 6291620, Tamaño: 7340032 bytes
+Calculando estructuras para EXT3 con journaling (constante=50)...
+Número de inodos calculado: 22706
+Número de bloques calculado: 68118
+=== ESTRUCTURA DEL SISTEMA DE ARCHIVOS EXT3 ===
+Superblock:        posición 6291620 (tamaño: 94 bytes)
+Journaling:        posición 6291714 (tamaño: 50 entradas)
+Bitmap inodos:     posición 6297414 (tamaño: 22706 bytes)
+Bitmap bloques:    posición 6320120 (tamaño: 68118 bytes)
+Tabla de inodos:   posición 6388238 (tamaño: 2883662 bytes)
+Bloques de datos:  posición 9271900 (tamaño: 4359552 bytes)
+Realizando formateo completo...
+Formateo completo terminado.
+Inicializando journaling...
+Journaling inicializado con 50 entradas vacías
+Inicializando bitmaps...
+Inicializando tabla de inodos...
+Inicializando bloques de datos...
+Creando estructura inicial del sistema de archivos...
+Escribiendo estructuras al disco...
+=== SISTEMA DE ARCHIVOS EXT3 CREADO EXITOSAMENTE ===
+Partición ID: 852A
+Sistema: EXT3
+Inodos totales: 22706
+Inodos disponibles: 22704
+Bloques totales: 68118
+Bloques disponibles: 68116
+Journaling: 50 entradas inicializadas
+
+Estructura inicial:
+  / (directorio raíz)
+  ├── . (enlace al directorio actual)
+  ├── .. (enlace al directorio padre)
+  └── users.txt (archivo de usuarios y grupos)
+
+Archivo users.txt contiene:
+  1,G,root        <- Grupo root (ID=1)
+  1,U,root,root,123 <- Usuario root (ID=1, Grupo=root, Contraseña=123)
+
+El usuario root tiene permisos completos para modificar el sistema.
+======FIN MKFS======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 8: VERIFICAR INFORMACIÓN DE PARTICIONES
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Info de Part1 (EXT2)
+Comando: info -id=851A
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: info -id=851A
+Ejecutando: info con parámetros: -id=851A
+=== INFORMACIÓN DEL SISTEMA DE ARCHIVOS ===
+Tipo de sistema: EXT2
+Número mágico: 0xEF53
+Total de inodos: 25970
+Total de bloques: 77910
+Inodos libres: 25968
+Bloques libres: 77908
+Tamaño de inodo: 127 bytes
+Tamaño de bloque: 64 bytes
+Fecha de montaje: 17/10/2025       
+Fecha de desmontaje: 17/10/2025       
+Contador de montajes: 1
+
+=== UBICACIONES DE ESTRUCTURAS ===
+Bitmap de inodos: posición 258
+Bitmap de bloques: posición 26228
+Tabla de inodos: posición 104138
+Bloques de datos: posición 3402328
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Info de Part2 (EXT3)
+Comando: info -id=852A
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: info -id=852A
+Ejecutando: info con parámetros: -id=852A
+=== INFORMACIÓN DEL SISTEMA DE ARCHIVOS ===
+Tipo de sistema: EXT3
+Número mágico: 0xEF53
+Total de inodos: 22706
+Total de bloques: 68118
+Inodos libres: 22704
+Bloques libres: 68116
+Tamaño de inodo: 127 bytes
+Tamaño de bloque: 64 bytes
+Fecha de montaje: 17/10/2025       
+Fecha de desmontaje: 17/10/2025       
+Contador de montajes: 1
+
+=== UBICACIONES DE ESTRUCTURAS ===
+Bitmap de inodos: posición 6297414
+Bitmap de bloques: posición 6320120
+Tabla de inodos: posición 6388238
+Bloques de datos: posición 9271900
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Info de Logica1 (EXT2)
+Comando: info -id=853A
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: info -id=853A
+Ejecutando: info con parámetros: -id=853A
+=== INFORMACIÓN DEL SISTEMA DE ARCHIVOS ===
+Tipo de sistema: EXT2
+Número mágico: 0xEF53
+Total de inodos: 9738
+Total de bloques: 29214
+Inodos libres: 9736
+Bloques libres: 29212
+Tamaño de inodo: 127 bytes
+Tamaño de bloque: 64 bytes
+Fecha de montaje: 17/10/2025       
+Fecha de desmontaje: 17/10/2025       
+Contador de montajes: 1
+
+=== UBICACIONES DE ESTRUCTURAS ===
+Bitmap de inodos: posición 14680352
+Bitmap de bloques: posición 14690090
+Tabla de inodos: posición 14719304
+Bloques de datos: posición 15956030
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 9: OPERACIONES EN SISTEMA EXT2
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Login en Part1 (EXT2)
+Comando: login -user=root -pass=123 -id=851A
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: login -user=root -pass=123 -id=851A
+Ejecutando: login con parámetros: -user=root -pass=123 -id=851A
+======Inicio LOGIN======
+Usuario: root
+Partición ID: 851A
+Partición encontrada: Part1 en disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+=== INICIO DE SESIÓN EXITOSO ===
+Usuario: root (ID: 1)
+Grupo: root (ID: 1)
+Partición: Part1 (ID: 851A)
+Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Todas las operaciones se realizarán en esta partición hasta cerrar sesión
+Use 'logout' para cerrar sesión
+======FIN LOGIN======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear directorio /docs
+Comando: mkdir -path=/docs
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkdir -path=/docs
+Ejecutando: mkdir con parámetros: -path=/docs
+======Inicio MKDIR======
+Ruta: /docs
+Crear directorios padre: false
+=== DIRECTORIO CREADO EXITOSAMENTE ===
+Ruta: /docs
+Propietario: root (ID: 1)
+Grupo: 1
+Permisos: 777 (rwxrwxrwx)
+Inodo asignado: 2
+Partición: 851A
+======FIN MKDIR======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear archivo test.txt
+Comando: mkfile -path=/docs/test.txt -size=100
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkfile -path=/docs/test.txt -size=100
+Ejecutando: mkfile con parámetros: -path=/docs/test.txt -size=100
+======Inicio MKFILE======
+Ruta: /docs/test.txt
+Crear directorios padre: false
+Tamaño: 100 bytes
+=== ARCHIVO CREADO EXITOSAMENTE ===
+Ruta: /docs/test.txt
+Tamaño: 100 bytes
+Bloques utilizados: 2 bloques de 64 bytes
+Espacio en disco: 128 bytes
+Propietario: root (ID: 1)
+Grupo: 1
+Permisos: 777 (rwxrwxrwx)
+Inodo asignado: 3
+Partición: 851A
+======FIN MKFILE======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Mostrar users.txt
+Comando: cat
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: cat
+Ejecutando: cat con parámetros: 
+Advertencia: Sin parámetros especificados. Mostrará el contenido de users.txt de la sesión actual.
+======Inicio CAT======
+=== CONTENIDO DEL ARCHIVO users.txt ===
+Partición: 851A
+Tamaño: 27 bytes
+---
+Línea 1: 1,G,root
+Línea 2: 1,U,root,root,123
+---
+Contenido raw (con caracteres de escape):
+"1,G,root\n1,U,root,root,123\n"
+======FIN CAT======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Cerrar sesión
+Comando: logout
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: logout
+Ejecutando: logout con parámetros: 
+======Inicio LOGOUT======
+Cerrando sesión del usuario: root
+Partición: 851A
+=== SESIÓN CERRADA EXITOSAMENTE ===
+Puede iniciar una nueva sesión con el comando 'login'
+======FIN LOGOUT======
+
+
+
+
+═══════════════════════════════════════════════════════
+  FASE 10: OPERACIONES EN SISTEMA EXT3
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Login en Part2 (EXT3)
+Comando: login -user=root -pass=123 -id=852A
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: login -user=root -pass=123 -id=852A
+Ejecutando: login con parámetros: -user=root -pass=123 -id=852A
+======Inicio LOGIN======
+Usuario: root
+Partición ID: 852A
+Partición encontrada: Part2 en disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+=== INICIO DE SESIÓN EXITOSO ===
+Usuario: root (ID: 1)
+Grupo: root (ID: 1)
+Partición: Part2 (ID: 852A)
+Disco: /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+Todas las operaciones se realizarán en esta partición hasta cerrar sesión
+Use 'logout' para cerrar sesión
+======FIN LOGIN======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear directorio /data
+Comando: mkdir -path=/data
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkdir -path=/data
+Ejecutando: mkdir con parámetros: -path=/data
+======Inicio MKDIR======
+Ruta: /data
+Crear directorios padre: false
+=== DIRECTORIO CREADO EXITOSAMENTE ===
+Ruta: /data
+Propietario: root (ID: 1)
+Grupo: 1
+Permisos: 777 (rwxrwxrwx)
+Inodo asignado: 2
+Partición: 852A
+======FIN MKDIR======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Crear archivo archivo.txt
+Comando: mkfile -path=/data/archivo.txt -size=200
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mkfile -path=/data/archivo.txt -size=200
+Ejecutando: mkfile con parámetros: -path=/data/archivo.txt -size=200
+======Inicio MKFILE======
+Ruta: /data/archivo.txt
+Crear directorios padre: false
+Tamaño: 200 bytes
+=== ARCHIVO CREADO EXITOSAMENTE ===
+Ruta: /data/archivo.txt
+Tamaño: 200 bytes
+Bloques utilizados: 4 bloques de 64 bytes
+Espacio en disco: 256 bytes
+Propietario: root (ID: 1)
+Grupo: 1
+Permisos: 777 (rwxrwxrwx)
+Inodo asignado: 3
+Partición: 852A
+======FIN MKFILE======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Mostrar users.txt
+Comando: cat
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: cat
+Ejecutando: cat con parámetros: 
+Advertencia: Sin parámetros especificados. Mostrará el contenido de users.txt de la sesión actual.
+======Inicio CAT======
+=== CONTENIDO DEL ARCHIVO users.txt ===
+Partición: 852A
+Tamaño: 27 bytes
+---
+Línea 1: 1,G,root
+Línea 2: 1,U,root,root,123
+---
+Contenido raw (con caracteres de escape):
+"1,G,root\n1,U,root,root,123\n"
+======FIN CAT======
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Cerrar sesión
+Comando: logout
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: logout
+Ejecutando: logout con parámetros: 
+======Inicio LOGOUT======
+Cerrando sesión del usuario: root
+Partición: 852A
+=== SESIÓN CERRADA EXITOSAMENTE ===
+Puede iniciar una nueva sesión con el comando 'login'
+======FIN LOGOUT======
+
+
+
+
+═══════════════════════════════════════════════════════
+  RESUMEN FINAL
+═══════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Test: Estado final de particiones
+Comando: mounted
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+>>> Procesando: mounted
+Ejecutando: mounted con parámetros: 
+======INICIO MOUNTED======
+Comando: mounted
+Descripción: Mostrar todas las particiones montadas en el sistema
+
+╔═══════════════════════════════════════════════════════════════╗
+║                    PARTICIONES MONTADAS EN EL SISTEMA                    ║
+╠═══════════════════════════════════════════════════════════════╣
+║ Total de particiones montadas: 3                              ║
+║ Carnet del sistema: 202201185 (IDs inician con 85)           ║
+╠═══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║ DISCO 1: /home/jose/Documentos/proyecto2/Backend/test/dis... ║
+║ ├─ Número de particiones montadas: 3                         ║
+║ ├─ [851A] Part1           - Primaria - Activa ║
+║ ├─ [852A] Part2           - Primaria - Activa ║
+║ └─ [853A] Logica1         - Lógica   - Activa ║
+║                                                              ║
+╠═══════════════════════════════════════════════════════════════╣
+║                        INFORMACIÓN TÉCNICA                           ║
+╠═══════════════════════════════════════════════════════════════╣
+║ • Letras de disco en uso: A                                   ║
+║ • Montaje en memoria RAM: Sí                                 ║
+║ • Estado en disco actualizado: Sí                           ║
+║ • IDs únicos generados: 3                                   ║
+======FIN MOUNTED======
+
+
+
+
+╔════════════════════════════════════════════════════════╗
+║      PRUEBAS COMPLETADAS EXITOSAMENTE                 ║
+╚════════════════════════════════════════════════════════╝
+
+Pruebas realizadas:
+  ✓ Creación de disco
+  ✓ Creación de particiones (primarias, extendida, lógicas)
+  ✓ FDISK ADD - Agregar espacio
+  ✓ FDISK ADD - Quitar espacio
+  ✓ Montaje de particiones
+  ✓ MKFS con EXT2
+  ✓ MKFS con EXT3
+  ✓ Operaciones en EXT2
+  ✓ Operaciones en EXT3
+
+Archivo de disco creado en:
+  /home/jose/Documentos/proyecto2/Backend/test/disco_pruebas.mia
+

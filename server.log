@@ -1,0 +1,9 @@
+=== SIMULADOR DE SISTEMA DE ARCHIVOS MIA - API ===
+Servidor API iniciado en http://localhost:5000
+Endpoints disponibles:
+  POST /execute - Ejecutar comandos
+  GET  /session - Obtener estado de sesión
+  POST /login   - Iniciar sesión (solo interfaz web)
+  POST /logout  - Cerrar sesión (solo interfaz web)
+  GET  /disks   - Obtener información de discos
+================================================
